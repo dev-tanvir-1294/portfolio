@@ -20,13 +20,13 @@ nav{
 	padding-right: 8%;
 }
 .logo{
-	color: white;
+	color: orange;
 	font-size: 35px;
 	letter-spacing: 1px;
 	cursor: pointer;
 }
 span{
-	color: #f9004d;
+	color: #6052a5;
 }
 nav ul li{
 	list-style-type: none;
@@ -97,7 +97,7 @@ h4{
 	border: none;
 	padding: 10px 30px;
 	border-radius: 30px;
-	background-color:#f9004d;
+	background-color:#069420;
 	color: white;
 	box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
 	top: 6px;
@@ -107,7 +107,7 @@ h4{
 .about{
 	width: 100%;
 	padding: 100px 0px;
-	background-color: #191919;
+	background-color: #069420;
 }
 .about img{
 	height: auto;
@@ -156,7 +156,7 @@ button{
 }
 button:hover{
 	background-color: transparent;
-	border: 2px solid #f9004d;
+	border: 2px solid #f9054d;
 	cursor: pointer;
 }
 
@@ -209,7 +209,7 @@ h5{
 	margin-bottom: 25px;
 }
 .card .button{
-	background-color:#f9004d;
+	background-color:#6495ED;
 	color: white;
 	text-decoration: none;
 	border: 2px solid transparent;
@@ -239,7 +239,7 @@ h5{
 	margin-bottom: 25px;
 }
 .contact-me .button-two{
-	background-color:#f9004d;
+	background-color:#1a9f61;
 	color: white;
 	text-decoration: none;
 	border: 2px solid transparent;
@@ -285,7 +285,7 @@ footer p:nth-child(2){
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background:  #f9004d;
+	background:  #ffcc88;
 	border-radius: 50%;
 	margin: 22px 10px;
 	color: white;
