@@ -19,6 +19,31 @@
     --glass-border: rgba(0, 0, 0, 0.1);
 }
 
+/* Base Styles & Lenis Support */
+html {
+    scroll-behavior: initial;
+}
+
+html.lenis {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -1578,15 +1603,15 @@ body {
 
 /* Local Assets Integration */
 .slice-1 {
-    background-image: url('./splitanimage-1.png');
+    background-image: url('/splitanimage-1.png');
 }
 
 .slice-2 {
-    background-image: url('./splitanimage-2.png');
+    background-image: url('/splitanimage-2.png');
 }
 
 .slice-3 {
-    background-image: url('./splitanimage-3.png');
+    background-image: url('/splitanimage-3.png');
 }
 
 /* Testimonial Card in Split */
