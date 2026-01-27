@@ -1559,7 +1559,7 @@ body {
     left: 0;
     width: 100%;
     height: 550px;
-    background-image: url('/main.png');
+    background-image: url('./main.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1603,15 +1603,15 @@ body {
 
 /* Local Assets Integration */
 .slice-1 {
-    background-image: url('/splitanimage-1.png');
+    background-image: url('./splitanimage-1.png');
 }
 
 .slice-2 {
-    background-image: url('/splitanimage-2.png');
+    background-image: url('./splitanimage-2.png');
 }
 
 .slice-3 {
-    background-image: url('/splitanimage-3.png');
+    background-image: url('./splitanimage-3.png');
 }
 
 /* Testimonial Card in Split */
@@ -2347,3 +2347,4 @@ body {
 .btn-submit.success svg {
     transform: translateX(5px) translateY(-5px);
 }
+
