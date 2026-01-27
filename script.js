@@ -1,6 +1,31 @@
 // Basic script structure
 console.log("Portfolio script loaded");
 
+// Initialize Lenis Smooth Scroll
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: 'vertical',
+    gestureOrientation: 'vertical',
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    smoothTouch: false,
+    touchMultiplier: 2,
+    infinite: false,
+})
+
+// Synchronize Lenis with GSAP ScrollTrigger
+lenis.on('scroll', ScrollTrigger.update)
+
+// Use GSAP's ticker to drive Lenis
+// This is the ONLY loop we need. Removing the separate raf() function fixes the "vibration"
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000)
+})
+
+// Disable lag smoothing to prevent desync during heavy animations
+gsap.ticker.lagSmoothing(0)
+
 // Theme Toggle Logic
 const themeToggle = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
