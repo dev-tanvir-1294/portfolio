@@ -3,16 +3,16 @@ console.log("Portfolio script loaded");
 
 // Initialize Lenis Smooth Scroll
 const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    orientation: 'vertical',
-    gestureOrientation: 'vertical',
-    smoothWheel: true,
+    lerp: 0.1, // Linear Interpolation for buttery smoothness in production
     wheelMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
+    smoothWheel: true,
     infinite: false,
 })
+
+// Ensure ScrollTrigger refreshes after all assets are loaded (fixes GitHub offset issues)
+window.addEventListener('load', () => {
+    ScrollTrigger.refresh();
+});
 
 // Synchronize Lenis with GSAP ScrollTrigger
 lenis.on('scroll', ScrollTrigger.update)
