@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Creative Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="#" class="brand">
+                <span class="logo-mark">D</span>
+                <span class="logo-text">DevPortfolio</span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about" class="active">About</a></li>
+                    <li><a href="#projects">Work</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <!-- Sun Icon -->
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Moon Icon -->
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="mobile-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+
+        <section class="hero" id="about">
+            <div class="container hero-content">
+                <p class="greeting">Hi, I'm</p>
+                <div class="hero-title-wrapper">
+                    <span class="hero-name">Md. Tanvir Ahmed</span>
+                    <span class="hero-name">Frontend Dev</span>
+                    <span class="hero-name">Fullstack Dev</span>
+                    <span class="hero-name">WordPress Expert</span>
+                </div>
+                <p class="hero-tagline">I build seamless web experiences with <span class="highlight">modern
+                        technologies</span>.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- Company Marquee Section -->
+        <section class="marquee-section">
+            <div class="marquee-container">
+                <div class="marquee-track">
+                    <!-- Original Set -->
+                    <span class="company-item">Upwork</span>
+                    <span class="company-item">Fiverr</span>
+                    <span class="company-item">Freelancer</span>
+                    <span class="company-item">Toptal</span>
+                    <span class="company-item">PeoplePerHour</span>
+                    <span class="company-item">Guru</span>
+                    <span class="company-item">99designs</span>
+
+                    <!-- Duplicate Set for Seamless Loop -->
+                    <span class="company-item">Upwork</span>
+                    <span class="company-item">Fiverr</span>
+                    <span class="company-item">Freelancer</span>
+                    <span class="company-item">Toptal</span>
+                    <span class="company-item">PeoplePerHour</span>
+                    <span class="company-item">Guru</span>
+                    <span class="company-item">99designs</span>
+
+                    <!-- Triplicate Set (just to be safe on wide screens) -->
+                    <span class="company-item">Upwork</span>
+                    <span class="company-item">Fiverr</span>
+                    <span class="company-item">Freelancer</span>
+                    <span class="company-item">Toptal</span>
+                    <span class="company-item">PeoplePerHour</span>
+                    <span class="company-item">Guru</span>
+                    <span class="company-item">99designs</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- About Me Section -->
+        <section class="about-section" id="about-me">
+            <div class="container">
+                <div class="about-wrapper">
+                    <!-- Left Column: Text Content -->
+                    <div class="about-left">
+                        <!-- Profile Image -->
+                        <div class="about-image-wrapper">
+                            <div class="about-image-stack">
+                                <img src="./assets/images/image.png" alt="Md. Tanvir Ahmed" class="stack-img active">
+                                <img src="./assets/images/img.jpeg" alt="Work Space" class="stack-img">
+                                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?fit=crop&w=800&q=80"
+                                    alt="Code Close-up" class="stack-img">
+                                <img src="./assets/images/image.jpeg" alt="Work Space" class="stack-img">
+                            </div>
+                            <div class="about-image-decoration"></div>
+                        </div>
+
+                        <div class="about-content-inner">
+                            <h2 class="section-title">About Me</h2>
+                            <p class="about-intro">
+                                Hi, I'm <span class="highlight-name">Md. Tanvir Ahmed</span>, a passionate web developer
+                                specializing in creating modern, responsive, and user-friendly digital experiences.
+                            </p>
+                            <p class="about-description">
+                                With expertise in <strong>Frontend</strong>, <strong>Fullstack</strong>, and
+                                <strong>WordPress</strong> development, I transform ideas into high-performance
+                                web applications. I love crafting clean code and beautiful interfaces that make
+                                a real impact.
+                            </p>
+
+                            <div class="info-items">
+                                <div class="info-item">
+                                    <span class="info-icon">📍</span>
+                                    <div class="info-content">
+                                        <span class="info-label">Location</span>
+                                        <span class="info-value">Dhaka, Bangladesh</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-icon">💼</span>
+                                    <div class="info-content">
+                                        <span class="info-label">Availability</span>
+                                        <span class="info-value">Open for Freelance & Full-time</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-icon">🎯</span>
+                                    <div class="info-content">
+                                        <span class="info-label">Specialization</span>
+                                        <span class="info-value">Web Development & Design</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Stats -->
+                    <div class="about-right">
+                        <div class="stats-container">
+                            <div class="stat-box">
+                                <div class="stat-icon">💼</div>
+                                <div class="stat-number" data-target="50">0</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon">⚡</div>
+                                <div class="stat-number" data-target="5">0</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon">😊</div>
+                                <div class="stat-number" data-target="40">0</div>
+                                <div class="stat-label">Happy Clients</div>
+                            </div>
+
+                            <div class="stat-box">
+                                <div class="stat-icon">🏆</div>
+                                <div class="stat-number" data-target="15">0</div>
+                                <div class="stat-label">Awards & Recognition</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Services I Offer</h2>
+                    <p class="section-subtitle">Specialized WordPress solutions tailored to your needs</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Service 1: WordPress Theme Development -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3 class="service-title">WordPress Theme Development</h3>
+                        <p class="service-description">
+                            Custom WordPress themes built from scratch with modern design principles,
+                            responsive layouts, and optimized performance. Fully compatible with Gutenberg
+                            and page builders.
+                        </p>
+                        <ul class="service-features">
+                            <li>✓ Custom Design Implementation</li>
+                            <li>✓ Responsive & Mobile-First</li>
+                            <li>✓ SEO Optimized</li>
+                            <li>✓ Fast Loading Speed</li>
+                        </ul>
+                        <a href="#contact" class="service-link">
+                            Get Started →
+                        </a>
+                    </div>
+
+                    <!-- Service 2: WordPress Plugin Development -->
+                    <div class="service-card featured">
+                        <div class="featured-badge">Popular</div>
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3 class="service-title">WordPress Plugin Development</h3>
+                        <p class="service-description">
+                            Powerful custom plugins that extend WordPress functionality. From simple
+                            utilities to complex integrations, I build secure, scalable solutions that
+                            follow WordPress coding standards.
+                        </p>
+                        <ul class="service-features">
+                            <li>✓ Custom Functionality</li>
+                            <li>✓ API Integrations</li>
+                            <li>✓ Database Optimization</li>
+                            <li>✓ Security Best Practices</li>
+                        </ul>
+                        <a href="#contact" class="service-link">
+                            Get Started →
+                        </a>
+                    </div>
+
+                    <!-- Service 3: WordPress Customization -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M19.4 15C19.2669 15.3016 19.2272 15.6362 19.286 15.9606C19.3448 16.285 19.4995 16.5843 19.73 16.82L19.79 16.88C19.976 17.0657 20.1235 17.2863 20.2241 17.5291C20.3248 17.7719 20.3766 18.0322 20.3766 18.295C20.3766 18.5578 20.3248 18.8181 20.2241 19.0609C20.1235 19.3037 19.976 19.5243 19.79 19.71C19.6043 19.896 19.3837 20.0435 19.1409 20.1441C18.8981 20.2448 18.6378 20.2966 18.375 20.2966C18.1122 20.2966 17.8519 20.2448 17.6091 20.1441C17.3663 20.0435 17.1457 19.896 16.96 19.71L16.9 19.65C16.6643 19.4195 16.365 19.2648 16.0406 19.206C15.7162 19.1472 15.3816 19.1869 15.08 19.32C14.7842 19.4468 14.532 19.6572 14.3543 19.9255C14.1766 20.1938 14.0813 20.5082 14.08 20.83V21C14.08 21.5304 13.8693 22.0391 13.4942 22.4142C13.1191 22.7893 12.6104 23 12.08 23C11.5496 23 11.0409 22.7893 10.6658 22.4142C10.2907 22.0391 10.08 21.5304 10.08 21V20.91C10.0723 20.579 9.96512 20.258 9.77251 19.9887C9.5799 19.7194 9.31074 19.5143 9 19.4C8.69838 19.2669 8.36381 19.2272 8.03941 19.286C7.71502 19.3448 7.41568 19.4995 7.18 19.73L7.12 19.79C6.93425 19.976 6.71368 20.1235 6.47088 20.2241C6.22808 20.3248 5.96783 20.3766 5.705 20.3766C5.44217 20.3766 5.18192 20.3248 4.93912 20.2241C4.69632 20.1235 4.47575 19.976 4.29 19.79C4.10405 19.6043 3.95653 19.3837 3.85588 19.1409C3.75523 18.8981 3.70343 18.6378 3.70343 18.375C3.70343 18.1122 3.75523 17.8519 3.85588 17.6091C3.95653 17.3663 4.10405 17.1457 4.29 16.96L4.35 16.9C4.58054 16.6643 4.73519 16.365 4.794 16.0406C4.85282 15.7162 4.81312 15.3816 4.68 15.08C4.55324 14.7842 4.34276 14.532 4.07447 14.3543C3.80618 14.1766 3.49179 14.0813 3.17 14.08H3C2.46957 14.08 1.96086 13.8693 1.58579 13.4942C1.21071 13.1191 1 12.6104 1 12.08C1 11.5496 1.21071 11.0409 1.58579 10.6658C1.96086 10.2907 2.46957 10.08 3 10.08H3.09C3.42099 10.0723 3.742 9.96512 4.0113 9.77251C4.28059 9.5799 4.48572 9.31074 4.6 9C4.73312 8.69838 4.77282 8.36381 4.714 8.03941C4.65519 7.71502 4.50054 7.41568 4.27 7.18L4.21 7.12C4.02405 6.93425 3.87653 6.71368 3.77588 6.47088C3.67523 6.22808 3.62343 5.96783 3.62343 5.705C3.62343 5.44217 3.67523 5.18192 3.77588 4.93912C3.87653 4.69632 4.02405 4.47575 4.21 4.29C4.39575 4.10405 4.61632 3.95653 4.85912 3.85588C5.10192 3.75523 5.36217 3.70343 5.625 3.70343C5.88783 3.70343 6.14808 3.75523 6.39088 3.85588C6.63368 3.95653 6.85425 4.10405 7.04 4.29L7.1 4.35C7.33568 4.58054 7.63502 4.73519 7.95941 4.794C8.28381 4.85282 8.61838 4.81312 8.92 4.68H9C9.29577 4.55324 9.54802 4.34276 9.72569 4.07447C9.90337 3.80618 9.99872 3.49179 10 3.17V3C10 2.46957 10.2107 1.96086 10.5858 1.58579C10.9609 1.21071 11.4696 1 12 1C12.5304 1 13.0391 1.21071 13.4142 1.58579C13.7893 1.96086 14 2.46957 14 3V3.09C14.0013 3.41179 14.0966 3.72618 14.2743 3.99447C14.452 4.26276 14.7042 4.47324 15 4.6C15.3016 4.73312 15.6362 4.77282 15.9606 4.714C16.285 4.65519 16.5843 4.50054 16.82 4.27L16.88 4.21C17.0657 4.02405 17.2863 3.87653 17.5291 3.77588C17.7719 3.67523 18.0322 3.62343 18.295 3.62343C18.5578 3.62343 18.8181 3.67523 19.0609 3.77588C19.3037 3.87653 19.5243 4.02405 19.71 4.21C19.896 4.39575 20.0435 4.61632 20.1441 4.85912C20.2448 5.10192 20.2966 5.36217 20.2966 5.625C20.2966 5.88783 20.2448 6.14808 20.1441 6.39088C20.0435 6.63368 19.896 6.85425 19.71 7.04L19.65 7.1C19.4195 7.33568 19.2648 7.63502 19.206 7.95941C19.1472 8.28381 19.1869 8.61838 19.32 8.92V9C19.4468 9.29577 19.6572 9.54802 19.9255 9.72569C20.1938 9.90337 20.5082 9.99872 20.83 10H21C21.5304 10 22.0391 10.2107 22.4142 10.5858C22.7893 10.9609 23 11.4696 23 12C23 12.5304 22.7893 13.0391 22.4142 13.4142C22.0391 13.7893 21.5304 14 21 14H20.91C20.5882 14.0013 20.2738 14.0966 20.0055 14.2743C19.7372 14.452 19.5268 14.7042 19.4 15Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3 class="service-title">WordPress Customization</h3>
+                        <p class="service-description">
+                            Enhance your existing WordPress site with custom features, design tweaks,
+                            and performance improvements. I'll make your vision come to life while
+                            maintaining code quality.
+                        </p>
+                        <ul class="service-features">
+                            <li>✓ Theme Customization</li>
+                            <li>✓ Feature Enhancements</li>
+                            <li>✓ Performance Tuning</li>
+                            <li>✓ Bug Fixes & Support</li>
+                        </ul>
+                        <a href="#contact" class="service-link">
+                            Get Started →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section class="projects-section" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Explore my recent work and creative solutions</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="web">Web Apps</button>
+                    <button class="filter-btn" data-filter="wordpress">WordPress</button>
+                    <button class="filter-btn" data-filter="design">UI/UX Design</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSISZxmJzSCqARYJJvU_efYGhb3Bi2h6lDWpw&s"
+                                alt="">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View Project →</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                            </div>
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <p class="project-description">A full-stack e-commerce solution with real-time inventory
+                                management and payment integration.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card" data-category="wordpress">
+                        <div class="project-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiEjBilP-PBEbL7NAsVh5jU2PEYPgaGhh8-g&s"
+                                alt="">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View Project →</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">WordPress</span>
+                                <span class="tag">WooCommerce</span>
+                            </div>
+                            <h3 class="project-title">Business Website</h3>
+                            <p class="project-description">Custom WordPress theme with advanced features and seamless
+                                user experience.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card" data-category="design">
+                        <div class="project-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5aKVFX1HPkkKVWuZSQV9pl8whPX1PVM7ghQ&s"
+                                alt="">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View Project →</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">Figma</span>
+                                <span class="tag">UI/UX</span>
+                            </div>
+                            <h3 class="project-title">Mobile App Design</h3>
+                            <p class="project-description">Modern mobile app interface with intuitive navigation and
+                                stunning visuals.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkCrVGsWGPEkgDOqTplqKutzAgbZo9gUxseg&s"
+                                alt="">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View Project →</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">Vue.js</span>
+                                <span class="tag">Firebase</span>
+                            </div>
+                            <h3 class="project-title">Task Management App</h3>
+                            <p class="project-description">Collaborative task manager with real-time updates and team
+                                features.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card" data-category="wordpress">
+                        <div class="project-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw9ZC2cHZVHgCBsCQ_qrxVw519s3ov9TbCrA&s"
+                                alt="">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View Project →</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">WordPress</span>
+                                <span class="tag">Custom Plugin</span>
+                            </div>
+                            <h3 class="project-title">Portfolio CMS</h3>
+                            <p class="project-description">Custom WordPress solution for creative professionals to
+                                showcase their work.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card" data-category="design">
+                        <div class="project-image">
+                            <img src="https://cmsminds.com/wp-content/uploads/2024/09/types-of-web-development.webp"
+                                alt="">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View Project →</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">Branding</span>
+                                <span class="tag">Web Design</span>
+                            </div>
+                            <h3 class="project-title">Brand Identity</h3>
+                            <p class="project-description">Complete brand identity design including logo, colors, and
+                                web presence.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View More Button -->
+                <div class="projects-footer">
+                    <a href="#" class="btn btn-primary">View All Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Skills</h2>
+                    <p class="section-subtitle">Technologies and tools I work with</p>
+                </div>
+
+                <div class="skills-wrapper">
+                    <!-- Skill Card 1: HTML -->
+                    <div class="skill-card">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 18.178l-4.62-1.256-.328-3.544h2.27l.158 1.844 2.52.667 2.52-.667.26-2.866H6.96l-.635-6.678h11.35l-.227 2.21H8.822l.204 2.256h8.217l-.624 6.778L12 18.178z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                        <h3 class="skill-name">HTML5</h3>
+                        <div class="skill-progress">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle-bg" cx="60" cy="60" r="52"></circle>
+                                <circle class="progress-ring-circle" cx="60" cy="60" r="52" data-percent="95"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="progress-number" data-target="95">0</span>%
+                            </div>
+                        </div>
+                        <p class="skill-description">Semantic markup, accessibility, and modern HTML standards</p>
+                    </div>
+
+                    <!-- Skill Card 2: CSS -->
+                    <div class="skill-card">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4.192 3.143h15.615l-1.42 16.034-6.404 1.812-6.369-1.813L4.192 3.143zM16.9 6.424l-9.8-.002.158 1.949 7.529.002-.189 2.02H9.66l.179 1.913h4.597l-.272 2.62-2.164.598-2.197-.603-.141-1.569h-1.94l.216 2.867L12 17.484l3.995-1.137.905-9.923z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                        <h3 class="skill-name">CSS3</h3>
+                        <div class="skill-progress">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle-bg" cx="60" cy="60" r="52"></circle>
+                                <circle class="progress-ring-circle" cx="60" cy="60" r="52" data-percent="90"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="progress-number" data-target="90">0</span>%
+                            </div>
+                        </div>
+                        <p class="skill-description">Flexbox, Grid, animations, and responsive design</p>
+                    </div>
+
+                    <!-- Skill Card 3: JavaScript -->
+                    <div class="skill-card">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3 3h18v18H3V3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155-.552-.259-1.165-.438-1.349-.854-.068-.248-.078-.382-.034-.529.113-.484.687-.629 1.137-.495.293.09.563.315.732.676.775-.507.775-.507 1.316-.844-.203-.314-.304-.451-.439-.586-.473-.528-1.103-.798-2.126-.775l-.528.067c-.507.124-.991.395-1.283.754-.855.968-.611 2.655.427 3.354 1.023.765 2.521.933 2.712 1.653.18.878-.652 1.159-1.475 1.058-.607-.136-.945-.439-1.316-1.002l-1.372.788c.157.359.337.517.607.832 1.305 1.316 4.568 1.249 5.153-.754.021-.067.18-.528.056-1.237l.034.049zm-6.737-5.434h-1.686c0 1.453-.007 2.898-.007 4.354 0 .924.047 1.772-.104 2.033-.247.517-.886.451-1.175.359-.297-.146-.448-.349-.623-.641-.047-.078-.082-.146-.095-.146l-1.368.844c.229.473.563.879.994 1.137.641.383 1.502.507 2.404.305.588-.17 1.095-.519 1.358-1.059.384-.697.302-1.553.299-2.509.008-1.541 0-3.083 0-4.635l.003-.042z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                        <h3 class="skill-name">JavaScript</h3>
+                        <div class="skill-progress">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle-bg" cx="60" cy="60" r="52"></circle>
+                                <circle class="progress-ring-circle" cx="60" cy="60" r="52" data-percent="85"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="progress-number" data-target="85">0</span>%
+                            </div>
+                        </div>
+                        <p class="skill-description">ES6+, DOM manipulation, async/await, and frameworks</p>
+                    </div>
+
+                    <!-- Skill Card 4: PHP -->
+                    <div class="skill-card">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715l.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218c.767 0 1.295.134 1.586.401s.378.7.263 1.299l-.572 2.944h-1.389zm7.597-2.265a2.782 2.782 0 0 1-.305.847c-.143.255-.33.49-.561.703-.261.25-.575.438-.917.551-.336.108-.765.164-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649c.797 0 1.378.209 1.744.628.366.417.477 1.001.331 1.751zm-2.595-1.403h-.943l-.516 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.551-1.049.092-.47.049-.802-.125-.995s-.524-.29-1.047-.29z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                        <h3 class="skill-name">PHP</h3>
+                        <div class="skill-progress">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle-bg" cx="60" cy="60" r="52"></circle>
+                                <circle class="progress-ring-circle" cx="60" cy="60" r="52" data-percent="80"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="progress-number" data-target="80">0</span>%
+                            </div>
+                        </div>
+                        <p class="skill-description">Backend development, APIs, and WordPress customization</p>
+                    </div>
+                </div>
+
+                <!-- Additional Skills Tags -->
+                <div class="additional-skills">
+                    <h3 class="additional-skills-title">Also Experienced With</h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">WordPress</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">SASS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section" id="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Client Feedback</h2>
+                    <p class="section-subtitle">What people say about working with me</p>
+                </div>
+
+                <div class="testimonials-split-wrapper">
+                    <div class="testimonials-split-container">
+                        <!-- Initial Solid Hero Image Layer -->
+                        <div class="main-hero-layer"></div>
+
+                        <!-- Slice 1 -->
+                        <div class="split-item" id="item-left">
+                            <div class="slice-image-wrapper">
+                                <div class="slice-image slice-1"></div>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">"Tanvir is exceptional. Turned complex requirements into a
+                                    high-performing site."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar"><img src="https://i.pravatar.cc/100?u=1" alt="C1"></div>
+                                    <div class="author-info">
+                                        <h4>Sarah J.</h4>
+                                        <p>CEO, TechFlow</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slice 2 -->
+                        <div class="split-item" id="item-center">
+                            <div class="slice-image-wrapper">
+                                <div class="slice-image slice-2"></div>
+                            </div>
+                            <div class="testimonial-card featured-testimonial">
+                                <p class="testimonial-text">"A game-changer. Provided insights that significantly
+                                    improved our overall UX."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar"><img src="https://i.pravatar.cc/100?u=2" alt="C2"></div>
+                                    <div class="author-info">
+                                        <h4>Michael C.</h4>
+                                        <p>PM, InnovateX</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slice 3 -->
+                        <div class="split-item" id="item-right">
+                            <div class="slice-image-wrapper">
+                                <div class="slice-image slice-3"></div>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">"The customization was perfect. Fast, responsive, and
+                                    exactly what I envisioned."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar"><img src="https://i.pravatar.cc/100?u=3" alt="C3"></div>
+                                    <div class="author-info">
+                                        <h4>Emma W.</h4>
+                                        <p>CD, Artistry</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's work together on your next project</p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <!-- Left: Contact Info -->
+                    <div class="contact-info">
+                        <h3 class="contact-info-title">Let's Talk</h3>
+                        <p class="contact-info-text">
+                            Have a project in mind or just want to chat? Feel free to reach out.
+                            I'm always open to discussing new projects, creative ideas, or opportunities.
+                        </p>
+
+                        <div class="contact-cards">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M3 8L10.89 13.26C11.54 13.67 12.46 13.67 13.11 13.26L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="contact-card-content">
+                                    <h4>Email</h4>
+                                    <a href="mailto:tanvirahmed1294@gmail.com">tanvirahmed1294@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="contact-card-content">
+                                    <h4>Phone</h4>
+                                    <a href="tel:+8801765266394">+880 1765 266394</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M17.657 16.657L13.414 20.9C13.039 21.275 12.535 21.487 12.01 21.487C11.485 21.487 10.981 21.275 10.606 20.9L6.343 16.657C5.22422 15.5381 4.46234 14.1127 4.15369 12.5608C3.84504 11.009 4.00349 9.40047 4.60901 7.93868C5.21452 6.4769 6.2399 5.22749 7.55548 4.34846C8.87107 3.46943 10.4178 3.00024 12 3.00024C13.5822 3.00024 15.1289 3.46943 16.4445 4.34846C17.7601 5.22749 18.7855 6.4769 19.391 7.93868C19.9965 9.40047 20.155 11.009 19.8463 12.5608C19.5377 14.1127 18.7758 15.5381 17.657 16.657V16.657Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="contact-card-content">
+                                    <h4>Location</h4>
+                                    <p>Dhaka, Bangladesh</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Contact Form -->
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5"
+                                    placeholder="Tell me about your project..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <span>Send Message</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Footer Top -->
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <span class="logo-mark">D</span>
+                            <span class="logo-text">DevPortfolio</span>
+                        </div>
+                        <p class="footer-tagline">
+                            Crafting digital experiences with passion and precision.
+                            Let's build something amazing together.
+                        </p>
+
+                    </div>
+
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><a href="#about">About Me</a></li>
+                                <li><a href="#projects">Projects</a></li>
+                                <li><a href="#skills">Skills</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4>Services</h4>
+                            <ul>
+                                <li><a href="#">Web Development</a></li>
+                                <li><a href="#">UI/UX Design</a></li>
+                                <li><a href="#">WordPress</a></li>
+                                <li><a href="#">Consulting</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><a href="mailto:tanvirahmed1294@gmail.com">tanvirahmed1294@gmail.com</a></li>
+                                <li><a href="tel:+8801765266394">+880 1765 266394</a></li>
+                                <li>Dhaka, Bangladesh</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <p class="copyright">
+                        © <span id="currentYear"></span> Md. Tanvir Ahmed. All rights reserved.
+                    </p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
