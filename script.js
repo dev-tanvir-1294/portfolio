@@ -98,66 +98,110 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     );
 
-    // About Section scrollytelling effect
+    // About Section scrollytelling effect (Desktop Only)
     const aboutSection = document.querySelector('.about-section');
     const imgStack = document.querySelectorAll('.stack-img');
     const aboutContentInner = document.querySelector('.about-content-inner');
     const aboutRight = document.querySelector('.about-right');
     const aboutImageWrapper = document.querySelector('.about-image-wrapper');
 
-    // Initial state: hide the inner text content
-    gsap.set(aboutContentInner, { opacity: 0, y: 150 });
+    let mm = gsap.matchMedia();
 
-    // Create a pinned timeline with Center-Pinning
-    const aboutTl = gsap.timeline({
-        scrollTrigger: {
-            trigger: aboutSection,
-            start: "center center", // Pin when the section is centered
-            end: "+=500%",          // Balanced scroll length
-            pin: true,
-            scrub: 1,
-            anticipatePin: 1,
-            invalidateOnRefresh: true
-        }
-    });
+    mm.add("(min-width: 969px)", () => {
+        // Initial state: hide the inner text content (Desktop)
+        gsap.set(aboutContentInner, { opacity: 0, y: 150 });
 
-    // ACT 1: Image Gallery Cycle
-    imgStack.forEach((img, i) => {
-        if (i === 0) return;
-        aboutTl.to(imgStack[i - 1], {
-            opacity: 0,
-            scale: 0.9,
-            duration: 2,
-            ease: "power2.inOut"
-        }, "+=1.2")
-            .to(img, {
-                opacity: 1,
-                scale: 1,
+        // Create a pinned timeline with Center-Pinning
+        const aboutTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: aboutSection,
+                start: "center center",
+                end: "+=500%",
+                pin: true,
+                scrub: 1,
+                anticipatePin: 1,
+                invalidateOnRefresh: true
+            }
+        });
+
+        // ACT 1: Image Gallery Cycle
+        imgStack.forEach((img, i) => {
+            if (i === 0) return;
+            aboutTl.to(imgStack[i - 1], {
+                opacity: 0,
+                scale: 0.9,
                 duration: 2,
                 ease: "power2.inOut"
-            }, "<");
+            }, "+=1.2")
+                .to(img, {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 2,
+                    ease: "power2.inOut"
+                }, "<");
+        });
+
+        // ACT 2: Image Section Scrolls UP (Stats STAY)
+        aboutTl.to({}, { duration: 1 });
+
+        aboutTl.to(aboutImageWrapper, {
+            y: -500,
+            opacity: 0,
+            duration: 4,
+            ease: "power2.in"
+        });
+
+        // ACT 3: About Text Content Arrives from BOTTOM
+        aboutTl.to(aboutContentInner, {
+            opacity: 1,
+            y: 0,
+            duration: 4,
+            ease: "power2.out"
+        }, "-=3.5");
+
+        aboutTl.to({}, { duration: 2 });
     });
 
-    // ACT 2: Image Section Scrolls UP (Stats STAY)
-    aboutTl.to({}, { duration: 1 }); // Brief pause after images
+    mm.add("(max-width: 968px)", () => {
+        // Simple entrance animations for Mobile
+        gsap.set([aboutImageWrapper, aboutContentInner, aboutRight], { opacity: 1, y: 0 });
 
-    aboutTl.to(aboutImageWrapper, {
-        y: -500, // Move high enough to clear
-        opacity: 0,
-        duration: 4,
-        ease: "power2.in"
+        gsap.from(".about-image-wrapper", {
+            scrollTrigger: {
+                trigger: ".about-image-wrapper",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            },
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            ease: "power2.out"
+        });
+
+        gsap.from(".about-content-inner", {
+            scrollTrigger: {
+                trigger: ".about-content-inner",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            },
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            ease: "power2.out"
+        });
+
+        gsap.from(".about-right", {
+            scrollTrigger: {
+                trigger: ".about-right",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            },
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            ease: "power2.out"
+        });
     });
-
-    // ACT 3: About Text Content Arrives from BOTTOM
-    aboutTl.to(aboutContentInner, {
-        opacity: 1,
-        y: 0, // Natural position
-        duration: 4,
-        ease: "power2.out"
-    }, "-=3.5"); // Start mid-way through image flight
-
-    // Progress hold
-    aboutTl.to({}, { duration: 2 });
 
 
     // Animated Counter for Stats
