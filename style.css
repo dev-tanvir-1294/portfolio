@@ -1603,15 +1603,15 @@ body {
 
 /* Local Assets Integration */
 .slice-1 {
-    background-image: url('/splitanimage-1.png');
+    background-image: url('./splitanimage-1.png');
 }
 
 .slice-2 {
-    background-image: url('/splitanimage-2.png');
+    background-image: url('./splitanimage-2.png');
 }
 
 .slice-3 {
-    background-image: url('/splitanimage-3.png');
+    background-image: url('./splitanimage-3.png');
 }
 
 /* Testimonial Card in Split */
@@ -2337,3 +2337,4 @@ body {
 [data-theme="light"] .progress-ring-circle-bg {
     stroke: rgba(99, 102, 241, 0.15);
 }
+
