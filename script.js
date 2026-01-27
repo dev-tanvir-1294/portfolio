@@ -441,4 +441,50 @@ document.addEventListener("DOMContentLoaded", (event) => {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+
+    // --- Contact Form EmailJS Integration ---
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = contactForm?.querySelector('.btn-submit');
+    const btnSpan = submitBtn?.querySelector('span');
+
+    if (contactForm && submitBtn) {
+        // Initialize EmailJS with your Public Key
+        // REPLACE 'YOUR_PUBLIC_KEY' with your actual public key from EmailJS
+        (function () {
+            emailjs.init("i2EHqpxiiu2DbUCH9");
+        })();
+
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Set loading state
+            submitBtn.disabled = true;
+            if (btnSpan) btnSpan.textContent = 'Sending...';
+
+            // REPLACE 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual IDs
+            const serviceID = 'service_3nu3o26';
+            const templateID = 'template_17a2hpy';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    // Success State
+                    submitBtn.disabled = false;
+                    submitBtn.classList.add('success');
+                    if (btnSpan) btnSpan.textContent = 'Message Sent!';
+                    contactForm.reset();
+
+                    // Revert button after 5 seconds
+                    setTimeout(() => {
+                        submitBtn.classList.remove('success');
+                        if (btnSpan) btnSpan.textContent = 'Send Message';
+                    }, 5000);
+                }, (err) => {
+                    // Error State
+                    submitBtn.disabled = false;
+                    if (btnSpan) btnSpan.textContent = 'Error! Try Again';
+                    console.error('EmailJS Error:', err);
+                    alert("Oops! Something went wrong. Please try again or email me directly at tanvirahmed1294@gmail.com");
+                });
+        });
+    }
 });
