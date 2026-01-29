@@ -26,54 +26,71 @@ gsap.ticker.add((time) => {
 // Disable lag smoothing to prevent desync during heavy animations
 gsap.ticker.lagSmoothing(0)
 
+// --- Premium Splash Screen Logic ---
+const splashScreen = document.querySelector('.splash-screen');
+const splashLogoMark = document.querySelector('.splash-logo .logo-mark');
+const loaderBar = document.querySelector('.loader-bar');
+const loadingText = document.querySelector('.loading-percentage');
+
+if (splashScreen) {
+    // Disable scrolling during splash
+    lenis.stop();
+
+    const splashTl = gsap.timeline({
+        onComplete: () => {
+            lenis.start();
+        }
+    });
+
+    // 1. Logo Entrance
+    splashTl.to(splashLogoMark, {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "power2.out",
+        delay: 0.5
+    });
+
+    // 2. Loading Progress
+    let progress = { value: 0 };
+    splashTl.to(progress, {
+        value: 100,
+        duration: 2.5,
+        ease: "power1.inOut",
+        onUpdate: () => {
+            const current = Math.ceil(progress.value);
+            if (loadingText) loadingText.textContent = current;
+            if (loaderBar) loaderBar.style.width = current + "%";
+        }
+    }, "-=0.2");
+
+    // 3. Cinematic Exit (Original Curtain Reveal)
+    splashTl.to(splashScreen, {
+        yPercent: -100,
+        duration: 1.2,
+        ease: "power4.inOut",
+        onComplete: () => {
+            splashScreen.style.display = 'none'; // Ensure it's gone
+        }
+    });
+
+    // 4. Hero Content Entrance
+    splashTl.from(".hero-content > *", {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out"
+    }, "-=0.6");
+}
+
+
+
 // Theme Toggle Logic
 const themeToggle = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
 
-// Check for saved user preference, if any, on load of voters
-const savedTheme = localStorage.getItem('theme');
-const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 
-if (savedTheme) {
-    htmlElement.setAttribute('data-theme', savedTheme);
-} else if (systemTheme === 'light') {
-    htmlElement.setAttribute('data-theme', 'light');
-}
-
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = htmlElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-        htmlElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-    });
-}
-
-// Simple mobile toggle placeholder
-const mobileToggle = document.querySelector('.mobile-toggle');
-const mainNav = document.querySelector('.main-nav');
-const navLinks = document.querySelectorAll('.main-nav a');
-
-if (mobileToggle && mainNav) {
-    mobileToggle.addEventListener('click', () => {
-        // Toggle active class for animation
-        mobileToggle.classList.toggle('active');
-        mainNav.classList.toggle('active');
-
-        // Prevent body scroll when menu is open
-        document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
-    });
-
-    // Close menu when a link is clicked
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileToggle.classList.remove('active');
-            mainNav.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    });
-}
 
 // Hero Text Rotation (GSAP)
 document.addEventListener("DOMContentLoaded", (event) => {
