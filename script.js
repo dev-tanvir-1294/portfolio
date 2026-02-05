@@ -90,6 +90,64 @@ if (splashScreen) {
 const themeToggle = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
 
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+    htmlElement.setAttribute('data-theme', 'light');
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        if (newTheme === 'light') {
+            htmlElement.setAttribute('data-theme', 'light');
+        } else {
+            htmlElement.removeAttribute('data-theme');
+        }
+        
+        localStorage.setItem('theme', newTheme);
+    });
+}
+
+// Mobile Menu Logic
+const mobileToggle = document.querySelector('.mobile-toggle');
+const mainNav = document.querySelector('.main-nav');
+const navLinks = document.querySelectorAll('.main-nav a');
+
+if (mobileToggle && mainNav) {
+    mobileToggle.addEventListener('click', () => {
+        mobileToggle.classList.toggle('active');
+        mainNav.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        if (mainNav.classList.contains('active')) {
+            lenis.stop();
+        } else {
+            lenis.start();
+        }
+    });
+
+    // Close menu when clicking a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+            lenis.start();
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mainNav.contains(e.target) && !mobileToggle.contains(e.target) && mainNav.classList.contains('active')) {
+            mobileToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+            lenis.start();
+        }
+    });
+}
+
 
 
 // Hero Text Rotation (GSAP)
