@@ -100,13 +100,13 @@ if (themeToggle) {
     themeToggle.addEventListener('click', () => {
         const currentTheme = htmlElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
+
         if (newTheme === 'light') {
             htmlElement.setAttribute('data-theme', 'light');
         } else {
             htmlElement.removeAttribute('data-theme');
         }
-        
+
         localStorage.setItem('theme', newTheme);
     });
 }
@@ -120,7 +120,7 @@ if (mobileToggle && mainNav) {
     mobileToggle.addEventListener('click', () => {
         mobileToggle.classList.toggle('active');
         mainNav.classList.toggle('active');
-        
+
         // Prevent body scroll when menu is open
         if (mainNav.classList.contains('active')) {
             lenis.stop();
@@ -137,7 +137,7 @@ if (mobileToggle && mainNav) {
             lenis.start();
         });
     });
-    
+
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!mainNav.contains(e.target) && !mobileToggle.contains(e.target) && mainNav.classList.contains('active')) {
@@ -560,6 +560,209 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     console.error('EmailJS Error:', err);
                     alert("Oops! Something went wrong. Please try again or email me directly at tanvirahmed1294@gmail.com");
                 });
+        });
+    }
+
+    // --- Particle Background Animation ---
+    const canvas = document.getElementById('particle-canvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray;
+
+        // Mouse interaction
+        let mouse = {
+            x: null,
+            y: null,
+            radius: 150
+        }
+
+        window.addEventListener('mousemove', function (event) {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+
+        // Clear mouse position when leaving window to stop effect
+        window.addEventListener('mouseout', function () {
+            mouse.x = undefined;
+            mouse.y = undefined;
+        });
+
+        // Get color based on theme
+        function getParticleColor() {
+            const isDark = !document.documentElement.getAttribute('data-theme') || document.documentElement.getAttribute('data-theme') !== 'light';
+            return isDark ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)';
+        }
+
+        function getLineColor() {
+            const isDark = !document.documentElement.getAttribute('data-theme') || document.documentElement.getAttribute('data-theme') !== 'light';
+            return isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)';
+        }
+
+        // Create particle
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1; // Size between 1 and 3
+                this.speedX = (Math.random() * 1.5) - 0.75;
+                this.speedY = (Math.random() * 1.5) - 0.75;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Mouse interaction
+                if (mouse.x != undefined && mouse.y != undefined) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < mouse.radius) {
+                        // Gently move particles away/towards mouse for interactive feel
+                        // This makes them "flee" slightly or expand around the cursor
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+                        const maxDistance = mouse.radius;
+                        const force = (maxDistance - distance) / maxDistance;
+                        const directionX = forceDirectionX * force * 3; // Strength
+                        const directionY = forceDirectionY * force * 3;
+
+                        this.x -= directionX;
+                        this.y -= directionY;
+                    }
+                }
+
+                // Wrap around screen
+                if (this.x > canvas.width) this.x = 0;
+                else if (this.x < 0) this.x = canvas.width;
+
+                if (this.y > canvas.height) this.y = 0;
+                else if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.fillStyle = getParticleColor();
+                ctx.globalAlpha = 0.5; // Slight transparency for dot
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.globalAlpha = 1.0; // Reset
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            // Responsive number of particles
+            const numberOfParticles = (canvas.width * canvas.height) / 15000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+
+                // Draw connections
+                for (let j = i; j < particlesArray.length; j++) {
+                    const dx = particlesArray[i].x - particlesArray[j].x;
+                    const dy = particlesArray[i].y - particlesArray[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = getLineColor();
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                        ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                        ctx.stroke();
+                        ctx.closePath();
+                    }
+                }
+
+                // Draw connection to mouse
+                if (mouse.x != undefined && mouse.y != undefined) {
+                    let dx = particlesArray[i].x - mouse.x;
+                    let dy = particlesArray[i].y - mouse.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = getLineColor(); // Keep it subtle
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.stroke();
+                        ctx.closePath();
+                    }
+                }
+            }
+            // Use GSAP ticker to sync with other animations or just RAF
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+
+        // Handle Resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        });
+
+        // Optional: Re-init on theme toggle to change colors instantly
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === "attributes" && mutation.attributeName === "data-theme") {
+                    // Force redraw with new colors
+                    // Not strictly necessary as getParticleColor is called every frame, 
+                    // but good for explicit updates if we cached colors.
+                }
+            });
+        });
+        observer.observe(document.documentElement, { attributes: true });
+    }
+
+    // --- Custom Cursor Logic for About Section ---
+    const customCursor = document.querySelector('.custom-cursor');
+    const aboutSectionCursor = document.querySelector('.about-section');
+
+    if (customCursor && aboutSectionCursor) {
+        // Center the cursor initially (GSAP handles transform)
+        gsap.set(customCursor, { xPercent: -50, yPercent: -50 });
+
+        // Create quickTo setters for performance
+        const xTo = gsap.quickTo(customCursor, "x", { duration: 0.2, ease: "power3" });
+        const yTo = gsap.quickTo(customCursor, "y", { duration: 0.2, ease: "power3" });
+
+        // Track global mouse movement
+        window.addEventListener('mousemove', (e) => {
+            xTo(e.clientX);
+            yTo(e.clientY);
+        });
+
+        // Show cursor when entering About section
+        aboutSectionCursor.addEventListener('mouseenter', () => {
+            gsap.to(customCursor, {
+                opacity: 1,
+                scale: 1,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        });
+
+        // Hide cursor when leaving About section
+        aboutSectionCursor.addEventListener('mouseleave', () => {
+            gsap.to(customCursor, {
+                opacity: 0,
+                scale: 0.5,
+                duration: 0.3,
+                ease: "power2.in"
+            });
         });
     }
 });
