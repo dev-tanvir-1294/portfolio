@@ -67,3 +67,63 @@ This portfolio was built using:
 ---
 
 # 📂 Project Structure
+portfolio/
+│
+├── index.html
+├── style.css
+├── script.js
+├── images/
+└── assets/
+
+---
+
+# 💼 Services
+
+The services I provide include:
+
+### UI/UX Design
+Designing clean and modern user interfaces with a focus on usability and aesthetics.
+
+### Web Development
+Building fast, responsive, and scalable websites that work across all devices.
+
+### App Development
+Learning and developing Android applications while expanding my development skills.
+
+---
+
+# 📱 Responsive Design
+
+This website is fully responsive and works on:
+
+- Desktop
+- Tablet
+- Mobile devices
+
+---
+
+# 📬 Contact
+
+If you want to work with me or have any questions, feel free to contact me.
+
+📧 Email: tanvirahmed1294@gmail.com  
+🌐 Portfolio: https://dev-tanvir-1294.github.io/portfolio/
+
+---
+
+# ⭐ Support
+
+If you like this project, consider giving it a **star ⭐ on GitHub**.
+
+---
+
+# 📄 License
+
+This project is open-source and available under the **MIT License**.
+
+---
+
+# 👨‍💻 Author
+
+Tanvir Ahmed  
+Web Developer
