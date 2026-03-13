@@ -70,10 +70,13 @@ This portfolio was built using:
 portfolio/
 │
 ├── index.html
-├── style.css
-├── script.js
-├── images/
 └── assets/
+    ├── css/
+    │   └── style.css
+    ├── js/
+    │   └── script.js
+    ├── images/
+    └── cv/
 
 ---
 
