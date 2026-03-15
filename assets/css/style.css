@@ -1103,6 +1103,64 @@ body {
     color: var(--accent-secondary);
 }
 
+/* Booking Button Custom Styling */
+.btn-booking {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    width: 100%;
+    margin-top: auto;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-booking span {
+    z-index: 2;
+}
+
+.btn-booking svg {
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.btn-booking::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: skewX(-20deg);
+    transition: all 0.6s ease;
+    z-index: 1;
+}
+
+.btn-booking:hover::before {
+    left: 150%;
+}
+
+.btn-booking:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+    color: white;
+}
+
+.btn-booking:hover svg {
+    transform: scale(1.1) rotate(-8deg);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .services-section {
