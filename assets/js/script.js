@@ -146,7 +146,39 @@ if (mobileToggle && mainNav) {
             lenis.start();
         }
     });
+
+    // --- ScrollSpy Logic for Navbar Active States ---
+    const sections = document.querySelectorAll('section[id]');
+    
+    // Create an Intersection Observer
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px', // Triggers when section is roughly in the middle of viewport
+        threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                // Remove active class from all links
+                navLinks.forEach(link => link.classList.remove('active'));
+                
+                // Add active class to corresponding link
+                const activeLink = document.querySelector(`.main-nav a[href="#${id}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
 }
+
 
 
 
@@ -809,4 +841,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         });
     });
+
+    // --- Scroll to Top Button Logic ---
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    
+    if (scrollTopBtn) {
+        // Show/hide based on scroll position using Lenis
+        lenis.on('scroll', (e) => {
+            if (e.scroll > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+    
+        // Scroll to top on click
+        scrollTopBtn.addEventListener('click', () => {
+            lenis.scrollTo(0, { duration: 1.2 });
+        });
+    }
 });
