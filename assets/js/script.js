@@ -304,6 +304,108 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
 
+    // --- Growth Section Sticky Scroll Animation ---
+    const growthSection = document.querySelector('.growth-section');
+    const growthCards = document.querySelectorAll('.growth-card');
+
+    if (growthSection && growthCards.length > 0) {
+        mm.add("(min-width: 769px)", () => {
+            const growthTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: growthSection,
+                    start: "center center",
+                    end: "+=300%",
+                    pin: true,
+                    scrub: 1,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true
+                }
+            });
+
+            // First Card (SSC) - Anchor
+            gsap.set(".growth-card.people", {
+                y: 0,
+                opacity: 1,
+                rotate: 0,
+                scale: 1,
+                z: 1
+            });
+
+            // Following cards start beneath
+            gsap.set(".growth-card.place", {
+                y: "100vh",
+                opacity: 0,
+                rotate: 15,
+                scale: 0.95
+            });
+
+            gsap.set(".growth-card.productivity", {
+                y: "100vh",
+                opacity: 0,
+                rotate: -15,
+                scale: 0.95
+            });
+
+            gsap.set(".growth-card.masters", {
+                y: "100vh",
+                opacity: 0,
+                rotate: 20,
+                scale: 0.95
+            });
+
+
+            // Phase 1: Card 2 (HSC) slides up and sets over SSC
+            growthTl.to(".growth-card.place", {
+                y: 30, // Stack offset
+                opacity: 1,
+                rotate: 0,
+                scale: 1,
+                duration: 3,
+                ease: "power2.out"
+            });
+
+            // Phase 2: Card 3 (BSc) slides up and sets over HSC
+            growthTl.to(".growth-card.productivity", {
+                y: 60, // Stack offset
+                opacity: 1,
+                rotate: 0,
+                scale: 1,
+                duration: 3,
+                ease: "power2.out"
+            });
+
+            // Phase 3: Card 4 (Masters) slides up and sets over BSc
+            growthTl.to(".growth-card.masters", {
+                y: 90, // Stack offset
+                opacity: 1,
+                rotate: 0,
+                scale: 1,
+                duration: 3,
+                ease: "power2.out"
+            });
+
+            // Buffer end
+            growthTl.to({}, { duration: 2 });
+        });
+
+        // Mobile: Simpler scroll entrance
+        mm.add("(max-width: 768px)", () => {
+            gsap.from(growthCards, {
+                scrollTrigger: {
+                    trigger: growthSection,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 0,
+                y: 30,
+                stagger: 0.2,
+                duration: 1,
+                ease: "power2.out"
+            });
+        });
+    }
+
+
     // Animated Counter for Stats
     const statNumbers = document.querySelectorAll('.stat-number');
 
