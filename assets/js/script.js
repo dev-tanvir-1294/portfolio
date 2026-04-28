@@ -149,7 +149,7 @@ if (mobileToggle && mainNav) {
 
     // --- ScrollSpy Logic for Navbar Active States ---
     const sections = document.querySelectorAll('section[id]');
-    
+
     // Create an Intersection Observer
     const observerOptions = {
         root: null,
@@ -163,7 +163,7 @@ if (mobileToggle && mainNav) {
                 const id = entry.target.getAttribute('id');
                 // Remove active class from all links
                 navLinks.forEach(link => link.classList.remove('active'));
-                
+
                 // Add active class to corresponding link
                 const activeLink = document.querySelector(`.main-nav a[href="#${id}"]`);
                 if (activeLink) {
@@ -946,7 +946,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     // --- Scroll to Top Button Logic ---
     const scrollTopBtn = document.getElementById('scrollTopBtn');
-    
+
     if (scrollTopBtn) {
         // Show/hide based on scroll position using Lenis
         lenis.on('scroll', (e) => {
@@ -956,7 +956,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 scrollTopBtn.classList.remove('visible');
             }
         });
-    
+
         // Scroll to top on click
         scrollTopBtn.addEventListener('click', () => {
             lenis.scrollTo(0, { duration: 1.2 });
